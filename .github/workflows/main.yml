@@ -1,0 +1,22 @@
+
+name: Test Mac Cloud
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-mac:
+    runs-on: xcode-27
+
+    steps:
+      - name: Check macOS
+        run: sw_vers
+
+      - name: Check Xcode
+        run: xcodebuild -version
+
+      - name: Check Python
+        run: python3 --version
+
+      - name: Check architecture
+        run: uname -m
